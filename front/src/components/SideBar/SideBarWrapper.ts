@@ -6,6 +6,7 @@ const SideBarWrapper = styled("nav")(({ theme }) => ({
   borderRadius: theme.spacing.small,
   color: theme.colors.powderWhite,
   padding: theme.spacing.small,
+  maxWidth: "20vw",
 }));
 
 export default SideBarWrapper;

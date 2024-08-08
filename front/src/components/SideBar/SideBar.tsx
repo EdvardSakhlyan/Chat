@@ -1,12 +1,15 @@
-import { FC, ReactNode } from "react";
+import { ElementType, FC } from "react";
 import { NavLink } from "react-router-dom";
 import SideBarWrapper from "./SideBarWrapper";
 import NavList from "./NavList";
 import NavItem from "./NavItem";
+import styled from "styled-components";
+import toCapitalize from "../../utils/toCapitalize";
 
 interface IRoute {
   name: string;
-  icon?: ReactNode;
+  Icon?: ElementType;
+  displayText?: boolean;
 }
 
 interface ISideBarProps {
@@ -17,9 +20,12 @@ const SideBar: FC<ISideBarProps> = ({ routes }) => {
   return (
     <SideBarWrapper>
       <NavList>
-        {routes.map(({ name, icon }, index) => (
+        {routes.map(({ name, Icon, displayText }, index) => (
           <NavItem key={index}>
-            <NavLink to={name}>{name}</NavLink>
+            <NavLink to={name}>
+              {Icon && <Icon />}
+              {displayText ? toCapitalize(name) : null}
+            </NavLink>
           </NavItem>
         ))}
       </NavList>

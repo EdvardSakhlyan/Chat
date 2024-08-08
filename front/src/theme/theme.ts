@@ -46,9 +46,9 @@ const theme: DefaultTheme = {
   fontSize: {
     xs: "0.5rem",
     sm: "1rem",
-    md: "1.5rem",
-    lg: "2rem",
-    xl: "2.5rem",
+    md: "1.25rem",
+    lg: "1.5rem",
+    xl: "2rem",
   },
 };
 
